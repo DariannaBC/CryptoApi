@@ -24,7 +24,7 @@ public class CoinsController : ControllerBase
         return _contexto.Coins.AsNoTracking().ToList();
     }
 
-    [HttpPost]
+    [HttpPost(Name = "PostCoins")]
     public async Task<ActionResult<coin>> PostCoin(coin coins)
     {
         _contexto.Coins.Add(coins);
